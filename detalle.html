@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalle del Módulo</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body style="display: flex; flex-direction: column;">
+<header>
+<h1>Detalle de Módulo</h1>
+<nav>
+<ul class="nav-menu">
+<li><a href="principal.html">Volver al Inicio</a></li>
+</ul>
+</nav>
+</header>
+<div class="detalle-container">
+<h2 id="tituloDetalle">Cargando...</h2>
+<p id="textoDetalle">Información detallada sobre el módulo seleccionado...</p>
+<a href="principal.html" class="btn-volver">Regresar</a>
+</div>
+<footer>
+<p>SENA - Articulación con la Media | Programación de Software</p>
+</footer>
+<script src="script.js">
+</script>
+
+<script>
+// Función específica para pintar la información según la tarjeta que se hizo clic
+window.onload = function() {
+const modulo = localStorage.getItem('moduloSeleccionado') || 'Información General';
+document.getElementById('tituloDetalle').innerText = modulo;
+document.getElementById('textoDetalle').innerText = `Aquí encontrarás toda la
+documentación, guías de aprendizaje y recursos prácticos correspondientes al área de
+${modulo} implementada en el programa de formación.`;
+}
+</script>
+</body>
+</html>

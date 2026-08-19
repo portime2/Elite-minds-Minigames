@@ -1,0 +1,276 @@
+
+:root{
+    --fondo:#050816;
+    --superficie:#10172b;
+    --acento:#00F5FF;
+    --acento2:#FF00FF;
+    --verde:#39FF14;
+    --rojo:#FF3C5F;
+    --texto:#F3F7FF;
+    --borde:#00D9FF;
+    --sombra:0 0 15px rgba(0,245,255,.45);
+    --sombra2:0 0 18px rgba(255,0,255,.35);
+}
+
+/* ==========================================
+   RESET
+========================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+body{
+    font-family:'Segoe UI',system-ui,sans-serif;
+    background:
+        radial-gradient(circle at top,#172041 0%,#0b1023 45%,#050816 100%);
+    color:var(--texto);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:1rem;
+}
+
+/* ==========================================
+   CLASES
+========================================== */
+.oculto{
+    display:none!important;
+}
+
+#app{
+    width:100%;
+    max-width:680px;
+}
+
+/* ==========================================
+   PANEL PRINCIPAL
+========================================== */
+.pantalla{
+    background:rgba(15,22,40,.85);
+    backdrop-filter:blur(12px);
+    border:2px solid var(--borde);
+    border-radius:22px;
+    padding:2.5rem;
+    box-shadow:
+        0 0 25px rgba(0,245,255,.25),
+        0 0 60px rgba(255,0,255,.15);
+    animation:aparecer .45s ease;
+}
+
+/* ==========================================
+   TITULOS
+========================================== */
+h1,h2,h3{
+    color:var(--acento);
+    text-shadow:
+        0 0 8px var(--acento),
+        0 0 18px var(--acento);
+}
+
+/* ==========================================
+   GRID
+========================================== */
+.opciones-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+    margin:1.7rem 0;
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+.opcion{
+    background:linear-gradient(145deg,#131b35,#0d1428);
+    border:2px solid #1d2d5a;
+    color:var(--texto);
+    border-radius:14px;
+    padding:1rem;
+    cursor:pointer;
+    transition:.25s;
+    text-align:left;
+    position:relative;
+    overflow:hidden;
+}
+
+.opcion::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+    transform:translateX(-100%);
+    transition:.5s;
+}
+
+.opcion:hover::before{
+    transform:translateX(100%);
+}
+
+.opcion:hover:not(:disabled){
+    border-color:var(--acento);
+    box-shadow:
+        0 0 10px var(--acento),
+        0 0 25px rgba(0,245,255,.35);
+    transform:translateY(-4px) scale(1.02);
+}
+
+.opcion:disabled{
+    opacity:.9;
+    cursor:default;
+}
+
+/* ==========================================
+   RESPUESTA CORRECTA
+========================================== */
+.opcion.correcto{
+    background:rgba(57,255,20,.12);
+    border-color:var(--verde);
+    color:var(--verde);
+    box-shadow:
+        0 0 12px var(--verde),
+        0 0 35px rgba(57,255,20,.35);
+}
+
+/* ==========================================
+   RESPUESTA INCORRECTA
+========================================== */
+.opcion.incorrecto{
+    background:rgba(255,60,95,.15);
+    border-color:var(--rojo);
+    color:var(--rojo);
+    box-shadow:
+        0 0 12px var(--rojo),
+        0 0 30px rgba(255,60,95,.35);
+    animation:shake .3s ease;
+}
+
+/* ==========================================
+   BOTONES GENERALES
+========================================== */
+button{
+    background:linear-gradient(
+        90deg,
+        var(--acento),
+        var(--acento2)
+    );
+    color:white;
+    border:none;
+    border-radius:14px;
+    padding:14px 20px;
+    cursor:pointer;
+    font-weight:700;
+    transition:.25s;
+    box-shadow:
+        0 0 10px rgba(0,245,255,.5),
+        0 0 25px rgba(255,0,255,.25);
+}
+
+button:hover{
+    transform:translateY(-3px);
+    filter:brightness(1.1);
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    background:#111827;
+    color:white;
+    border:2px solid #1f3f7a;
+    border-radius:12px;
+    transition:.25s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:var(--acento);
+    box-shadow:0 0 12px var(--acento);
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0d1327;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+        var(--acento),
+        var(--acento2)
+    );
+    border-radius:10px;
+}
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes shake{
+    0%,100%{
+        transform:translateX(0);
+    }
+    25%{
+        transform:translateX(-8px);
+    }
+    75%{
+        transform:translateX(8px);
+    }
+}
+.feedback{
+
+    margin-top:20px;
+    padding:18px;
+
+    border-radius:12px;
+
+    background:#111827;
+
+    text-align:center;
+
+    font-size:18px;
+
+    border:1px solid #00F5FF;
+
+}
+
+#btn-siguiente{
+
+    width:220px;
+
+    display:block;
+
+    margin:25px auto 0;
+
+}

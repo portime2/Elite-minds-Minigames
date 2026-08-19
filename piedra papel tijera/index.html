@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Piedra, Papel o Tijera</title>
+  <link rel="stylesheet" href="style.css"> <!-- importa los estilos -->
+</head>
+<body>
+  <h1>Piedra, Papel o Tijera</h1>
+
+  <!-- ZONA 1: Marcador de puntos -->
+  <div class="marcador">
+    <p>Jugador: <span id="puntos-jugador">0</span></p>
+    <p>Computadora: <span id="puntos-computadora">0</span></p>
+  </div>
+
+  <!-- ZONA 2: Botones de elección -->
+  <div class="opciones">
+    <button class="boton-opcion" id="piedra">🪨 Piedra</button>
+    <button class="boton-opcion" id="papel">📄 Papel</button>
+    <button class="boton-opcion" id="tijera">✂ Tijera</button>
+  </div>
+
+  <!-- ZONA 3: Área de resultado -->
+  <div class="resultado">
+    <p id="mensaje">¡Elige una opción para empezar!</p>
+    <p id="elecciones"></p>
+  </div>
+
+  <script src="script.js"></script> <!-- siempre al final del body -->
+</body>
+</html>

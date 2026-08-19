@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia de Sistemas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- ===================== -->
+    <!-- PANTALLA DE INICIO -->
+    <!-- ===================== -->
+
+    <div id="pantalla-inicio" class="pantalla">
+
+        <div class="emoji-big">🖥️</div>
+
+        <h1>Trivia de Sistemas</h1>
+
+        <p>
+            ¿Cuánto sabes sobre sistemas, redes y programación?
+        </p>
+
+        <div class="record">
+            🏆 Récord:
+            <span id="record-display">0</span>
+        </div>
+
+        <button id="btn-iniciar" onclick="iniciarJuego()">
+            ¡Jugar Ahora! 🚀
+        </button>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- PANTALLA DEL JUEGO -->
+    <!-- ===================== -->
+
+    <div id="pantalla-juego" class="pantalla oculto">
+
+        <div class="barra-top">
+
+            <div class="progreso-texto">
+                Pregunta
+                <span id="num-actual">1</span>
+                de
+                <span id="total-preguntas">10</span>
+            </div>
+
+            <div class="puntaje-badge">
+                ⭐
+                <span id="puntaje-actual">0</span>
+            </div>
+
+        </div>
+
+        <div class="barra-progreso">
+            <div id="barra-fill"></div>
+        </div>
+
+        <div id="temporizador">
+            ⏱
+            <span id="tiempo">15</span>s
+        </div>
+
+        <div id="categoria" class="categoria-chip"></div>
+
+        <div id="pregunta-texto" class="pregunta"></div>
+
+        <div id="opciones" class="opciones-grid"></div>
+
+        <div id="feedback" class="feedback oculto"></div>
+
+        <button
+            id="btn-siguiente"
+            class="oculto"
+            onclick="siguientePregunta()">
+
+            Siguiente →
+
+        </button>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- RESULTADOS -->
+    <!-- ===================== -->
+
+    <div id="pantalla-resultado" class="pantalla oculto">
+
+        <div id="resultado-emoji">🏆</div>
+
+        <h2>¡Juego Terminado!</h2>
+
+        <div class="puntaje-final">
+
+            <span id="puntaje-final">0</span>
+
+            <small> puntos</small>
+
+        </div>
+
+        <p id="mensaje-resultado"></p>
+
+        <div class="record">
+
+            🏆 Récord:
+
+            <span id="record-display-final">0</span>
+
+        </div>
+
+        <button onclick="reiniciarJuego()">
+
+            Jugar de Nuevo 🔄
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

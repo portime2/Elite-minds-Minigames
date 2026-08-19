@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego del Ahorcado</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+
+  <body>
+  <div id="juego">
+    <h1>El Ahorcado ⚡</h1>
+    <p class="subtitulo" id="subtitulo">¡Adivina la palabra!</p>
+    <div class="marcador">
+      <div class="marca">Ganadas<span id="cntGanadas">0</span></div>
+      <div class="marca">Perdidas<span id="cntPerdidas">0</span></div>
+      <div class="marca">Racha<span id="cntRacha">0</span></div>
+    </div>
+    <canvas id="lienzo" width="300" height="320"></canvas>
+    <div class="vida-bar" id="vidaBar"></div>
+    <div class="info-palabra">
+      <span class="categoria-badge" id="categoriaLabel">Categoría</span>
+      <span style="color:#64748b;font-size:.8rem" id="longPalabra"></span>
+    </div>
+    <div id="palabraDisplay"></div>
+    <p id="incorrectas">Incorrectas: <span id="listaIncorrectas"></span></p>
+    <div id="teclado"></div>
+    <div class="botones-accion">
+      <button class="btn btn-reiniciar" onclick="iniciarJuego()">↺ Nueva partida</button>
+      <button class="btn btn-pista" id="btnPista" onclick="darPista()">💡 Pista (−1 vida)</button>
+    </div>
+    <div id="mensaje"></div>
+  </div>
+  
+
+  <script src="script.js"> 
+    // — Siguiente paso: añadiremos el CSS —
+  </script>
+</body>
+</html>

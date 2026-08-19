@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memorama · GameLab</title>
+<style>
+  body{
+    margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+    font-family:system-ui, sans-serif; background:#0e2338; color:#F4EFE4; padding:30px;
+  }
+  h1{font-size:1.3rem; margin:0;}
+  #status{min-height:1.4em; font-weight:bold; color:#F4EFE4;}
+  footer{font-size:0.75rem; opacity:0.6; margin-top:10px;}
+  button.reset{
+    margin-top:6px; padding:8px 16px; border-radius:8px; border:1.5px solid #F4EFE4; background:transparent; color:#F4EFE4; cursor:pointer;
+  }
+  .board{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  background:#150a2e;
+  padding:20px;
+  border-radius:16px;
+}
+.card{
+  width:72px; height:88px;
+  background:#2a1554;
+  color:#7CF9C4;
+  border:none;
+  border-radius:14px;
+  font-size:1.8rem;
+  cursor:pointer;
+}
+.card.flipped, .card.matched{ background:#fffdf8; color:#16222D; }
+</style>
+</head>
+<body>
+  <h1>Memorama — hecho en GameLab</h1>
+  <div id="board" class="board"></div>
+<p id="status"></p>
+  <button class="reset" onclick="location.reload()">Reiniciar</button>
+  <footer>Programado para stan · Colores: Neón noche</footer>
+<script>
+const icons = ["🍀","🌙","🔥","⭐","🌊","🍎"];
+let deck = shuffle(icons.concat(icons))
+  .map((icon, id) => ({ id, icon, matched:false }));
+let flipped = [];
+let lock = false;
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function flipCard(id){
+  if(lock) return;
+  const card = deck.find(c => c.id === id);
+  if(card.matched || flipped.includes(id)) return;
+
+  flipped.push(id);
+  render();
+
+  if(flipped.length === 2){
+    lock = true;
+    const [a, b] = flipped.map(fid => deck.find(c => c.id === fid));
+    setTimeout(() => {
+      if(a.icon === b.icon){ a.matched = true; b.matched = true; }
+      flipped = [];
+      lock = false;
+      render();
+      if(deck.every(c => c.matched)){
+        document.getElementById("status").textContent = "¡Completaste el tablero!";
+      }
+    }, 700);
+  }
+}
+
+function render(){
+  const el = document.getElementById("board");
+  el.innerHTML = "";
+  deck.forEach(card => {
+    const btn = document.createElement("button");
+    const shown = card.matched || flipped.includes(card.id);
+    btn.className = "card" + (card.matched ? " matched" : (shown ? " flipped" : ""));
+    btn.textContent = shown ? card.icon : "❓";
+    btn.onclick = () => flipCard(card.id);
+    el.appendChild(btn);
+  });
+}
+render();
+</script>
+</body>
+</html>
