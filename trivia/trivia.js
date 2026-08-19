@@ -1,467 +1,551 @@
-// ===============================
+// ==========================================
 // BANCO DE PREGUNTAS
-// ===============================
+// ==========================================
+
 const PREGUNTAS = [
-  {
-    pregunta: "¿Cuál es el sistema operativo de código abierto más popular en servidores?",
-    opciones: ["Windows Server", "Linux", "macOS", "FreeBSD"],
-    correcta: 1,
-    categoria: "🐧 Sistemas Operativos",
-    explicacion: "Linux domina la mayoría de los servidores web del mundo."
-  },
-  {
-    pregunta: "¿Qué significa RAM?",
-    opciones: [
-      "Read Access Memory",
-      "Random Access Memory",
-      "Rapid Array Module",
-      "Run Application Mode"
-    ],
-    correcta: 1,
-    categoria: "💾 Hardware",
-    explicacion: "RAM significa Random Access Memory."
-  },
-  {
-    pregunta: "¿En qué capa del modelo OSI trabaja el protocolo IP?",
-    opciones: [
-      "Capa Física",
-      "Capa de Enlace",
-      "Capa de Red",
-      "Capa de Transporte"
-    ],
-    correcta: 2,
-    categoria: "🌐 Redes",
-    explicacion: "IP pertenece a la Capa 3 (Red)."
-  },
-  {
-    pregunta: "¿Qué dispositivo conecta varias computadoras dentro de una red local?",
-    opciones: [
-      "Router",
-      "Switch",
-      "Módem",
-      "Firewall"
-    ],
-    correcta: 1,
-    categoria: "🌐 Redes",
-    explicacion: "El switch permite conectar equipos dentro de una LAN."
-  },
-  {
-    pregunta: "¿Cuál es la extensión de un archivo de Microsoft Word?",
-    opciones: [".xls", ".ppt", ".docx", ".txt"],
-    correcta: 2,
-    categoria: "📄 Ofimática",
-    explicacion: "Los documentos modernos de Word usan la extensión .docx."
-  },
-  {
-    pregunta: "¿Qué significa CPU?",
-    opciones: [
-      "Central Processing Unit",
-      "Computer Personal Unit",
-      "Control Program Unit",
-      "Central Program Utility"
-    ],
-    correcta: 0,
-    categoria: "💻 Hardware",
-    explicacion: "CPU significa Unidad Central de Procesamiento."
-  },
-  {
-    pregunta: "¿Cuál de estos es un navegador web?",
-    opciones: [
-      "Windows",
-      "Google Chrome",
-      "Ubuntu",
-      "Excel"
-    ],
-    correcta: 1,
-    categoria: "🌍 Internet",
-    explicacion: "Google Chrome es uno de los navegadores más utilizados."
-  },
-  {
-    pregunta: "¿Qué protocolo se utiliza para navegar de forma segura en Internet?",
-    opciones: [
-      "FTP",
-      "HTTP",
-      "HTTPS",
-      "SMTP"
-    ],
-    correcta: 2,
-    categoria: "🔒 Seguridad",
-    explicacion: "HTTPS cifra la comunicación mediante SSL/TLS."
-  },
-  {
-    pregunta: "¿Qué significa SSD?",
-    opciones: [
-      "Solid State Drive",
-      "System Storage Disk",
-      "Secure Storage Device",
-      "Standard System Disk"
-    ],
-    correcta: 0,
-    categoria: "💾 Hardware",
-    explicacion: "SSD significa Solid State Drive."
-  },
-  {
-    pregunta: "¿Qué empresa desarrolló Windows?",
-    opciones: [
-      "Apple",
-      "Google",
-      "Microsoft",
-      "IBM"
-    ],
-    correcta: 2,
-    categoria: "💻 Sistemas Operativos",
-    explicacion: "Microsoft desarrolla el sistema operativo Windows."
-  },
-  {
-    pregunta: "¿Qué dirección IP corresponde al localhost?",
-    opciones: [
-      "192.168.1.1",
-      "127.0.0.1",
-      "255.255.255.0",
-      "8.8.8.8"
-    ],
-    correcta: 1,
-    categoria: "🌐 Redes",
-    explicacion: "127.0.0.1 representa el propio equipo (localhost)."
-  },
-  {
-    pregunta: "¿Qué componente almacena los datos de forma permanente?",
-    opciones: [
-      "RAM",
-      "Procesador",
-      "Disco duro o SSD",
-      "Tarjeta gráfica"
-    ],
-    correcta: 2,
-    categoria: "💾 Hardware",
-    explicacion: "El disco duro y el SSD almacenan la información permanentemente."
-  },
-  {
-    pregunta: "¿Cuál de estos lenguajes se utiliza para dar estilo a una página web?",
-    opciones: [
-      "HTML",
-      "Python",
-      "CSS",
-      "SQL"
-    ],
-    correcta: 2,
-    categoria: "🌐 Desarrollo Web",
-    explicacion: "CSS controla el diseño y la apariencia de las páginas web."
-  },
-  {
-    pregunta: "¿Cuál es el propósito principal de un antivirus?",
-    opciones: [
-      "Crear páginas web",
-      "Acelerar Internet",
-      "Proteger el equipo contra malware",
-      "Editar documentos"
-    ],
-    correcta: 2,
-    categoria: "🛡 Seguridad",
-    explicacion: "El antivirus detecta y elimina software malicioso."
-  },
-  {
-    pregunta: "¿Qué significa la sigla URL?",
-    opciones: [
-      "Universal Resource Locator",
-      "Uniform Resource Locator",
-      "Universal Route Link",
-      "Uniform Route Link"
-    ],
-    correcta: 1,
-    categoria: "🌍 Internet",
-    explicacion: "URL significa Uniform Resource Locator."
-  }
+    {
+        categoria: "Sistemas Operativos",
+        pregunta: "¿Cuál es el sistema operativo de código abierto más popular en servidores?",
+        opciones: ["Windows", "Linux", "macOS", "Android"],
+        correcta: 1
+    },
+
+    {
+        categoria: "Hardware",
+        pregunta: "¿Qué componente almacena temporalmente los datos que está utilizando el computador?",
+        opciones: ["Disco duro", "RAM", "Procesador", "Tarjeta gráfica"],
+        correcta: 1
+    },
+
+    {
+        categoria: "Redes",
+        pregunta: "¿En qué capa del modelo OSI opera principalmente el protocolo IP?",
+        opciones: ["Capa física", "Capa de enlace", "Capa de red", "Capa de transporte"],
+        correcta: 2
+    },
+
+    {
+        categoria: "Programación",
+        pregunta: "¿Qué lenguaje se utiliza principalmente para dar interactividad a una página web?",
+        opciones: ["HTML", "CSS", "JavaScript", "SQL"],
+        correcta: 2
+    },
+
+    {
+        categoria: "Hardware",
+        pregunta: "¿Qué significa CPU?",
+        opciones: [
+            "Central Processing Unit",
+            "Computer Personal Unit",
+            "Central Program Utility",
+            "Control Processing User"
+        ],
+        correcta: 0
+    },
+
+    {
+        categoria: "Redes",
+        pregunta: "¿Qué dispositivo permite conectar diferentes equipos dentro de una red local?",
+        opciones: ["Switch", "Monitor", "Teclado", "Impresora"],
+        correcta: 0
+    },
+
+    {
+        categoria: "Programación",
+        pregunta: "¿Qué etiqueta HTML se utiliza para crear un enlace?",
+        opciones: ["<p>", "<a>", "<link>", "<url>"],
+        correcta: 1
+    },
+
+    {
+        categoria: "Bases de Datos",
+        pregunta: "¿Qué lenguaje se utiliza para consultar bases de datos relacionales?",
+        opciones: ["HTML", "CSS", "SQL", "PHP"],
+        correcta: 2
+    },
+
+    {
+        categoria: "Internet",
+        pregunta: "¿Qué significa HTTP?",
+        opciones: [
+            "HyperText Transfer Protocol",
+            "High Transfer Text Program",
+            "Hyperlink Text Transfer Process",
+            "Host Transfer Protocol"
+        ],
+        correcta: 0
+    },
+
+    {
+        categoria: "Seguridad",
+        pregunta: "¿Cuál de estos es un ejemplo de malware?",
+        opciones: ["Antivirus", "Firewall", "Virus", "Router"],
+        correcta: 2
+    },
+
+    {
+        categoria: "Hardware",
+        pregunta: "¿Cuál es la función principal de la tarjeta gráfica?",
+        opciones: [
+            "Procesar imágenes y gráficos",
+            "Guardar archivos",
+            "Conectar a Internet",
+            "Controlar el teclado"
+        ],
+        correcta: 0
+    },
+
+    {
+        categoria: "Programación",
+        pregunta: "¿Qué significa HTML?",
+        opciones: [
+            "HyperText Markup Language",
+            "HighText Machine Language",
+            "Hyper Tool Multi Language",
+            "Home Text Markup Language"
+        ],
+        correcta: 0
+    },
+
+    {
+        categoria: "Redes",
+        pregunta: "¿Qué identifica de forma lógica a un dispositivo dentro de una red?",
+        opciones: ["Dirección IP", "Monitor", "CPU", "RAM"],
+        correcta: 0
+    },
+
+    {
+        categoria: "Sistemas Operativos",
+        pregunta: "¿Cuál de estos sistemas operativos fue desarrollado por Microsoft?",
+        opciones: ["Linux", "Windows", "Ubuntu", "Android"],
+        correcta: 1
+    },
+
+    {
+        categoria: "Seguridad",
+        pregunta: "¿Qué elemento ayuda a proteger una red controlando el tráfico?",
+        opciones: ["Firewall", "Monitor", "Teclado", "Memoria RAM"],
+        correcta: 0
+    }
 ];
 
 
-// ===============================
-// CONFIGURACIÓN
-// ===============================
-const TIEMPO_LIMITE = 15;
+// ==========================================
+// VARIABLES DEL JUEGO
+// ==========================================
 
-// ===============================
-// ESTADO DEL JUEGO
-// ===============================
-let estado = {
-  indice: 0,
-  puntaje: 0,
-  respondida: false,
-  temporizadorId: null,
-  preguntasMezcladas: []
-};
+let preguntasMezcladas = [];
+let preguntaActual = 0;
+let puntaje = 0;
+let tiempo = 15;
+let temporizador = null;
+let respondida = false;
 
-// ===============================
-// MEZCLAR PREGUNTAS
-// ===============================
-function mezclar(arr) {
-  const copia = [...arr];
+const TOTAL_PREGUNTAS = 10;
 
-  for (let i = copia.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copia[i], copia[j]] = [copia[j], copia[i]];
-  }
 
-  return copia;
+// ==========================================
+// ELEMENTOS DEL HTML
+// ==========================================
+
+const pantallaInicio = document.getElementById("pantalla-inicio");
+const pantallaJuego = document.getElementById("pantalla-juego");
+const pantallaResultado = document.getElementById("pantalla-resultado");
+
+const numActual = document.getElementById("num-actual");
+const totalPreguntas = document.getElementById("total-preguntas");
+
+const puntajeActual = document.getElementById("puntaje-actual");
+const puntajeFinal = document.getElementById("puntaje-final");
+
+const categoria = document.getElementById("categoria");
+const preguntaTexto = document.getElementById("pregunta-texto");
+const opciones = document.getElementById("opciones");
+
+const feedback = document.getElementById("feedback");
+const btnSiguiente = document.getElementById("btn-siguiente");
+
+const tiempoDisplay = document.getElementById("tiempo");
+const barraFill = document.getElementById("barra-fill");
+
+const recordDisplay = document.getElementById("record-display");
+const recordDisplayFinal = document.getElementById("record-display-final");
+
+const mensajeResultado = document.getElementById("mensaje-resultado");
+const resultadoEmoji = document.getElementById("resultado-emoji");
+
+
+// ==========================================
+// MEZCLAR ARRAY
+// ==========================================
+
+function mezclar(array) {
+    const copia = [...array];
+
+    for (let i = copia.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+
+    return copia;
 }
 
-// ===============================
+
+// ==========================================
+// MOSTRAR RÉCORD
+// ==========================================
+
+function obtenerRecord() {
+    return Number(localStorage.getItem("recordTrivia")) || 0;
+}
+
+function actualizarRecord() {
+    const record = obtenerRecord();
+
+    recordDisplay.textContent = record;
+    recordDisplayFinal.textContent = record;
+}
+
+
+// ==========================================
 // INICIAR JUEGO
-// ===============================
+// ==========================================
+
 function iniciarJuego() {
 
-  estado.indice = 0;
-  estado.puntaje = 0;
-  estado.respondida = false;
+    preguntaActual = 0;
+    puntaje = 0;
 
-  estado.preguntasMezcladas = mezclar(PREGUNTAS).slice(0, 10);
+    // Mezclar las preguntas y seleccionar 10
+    preguntasMezcladas = mezclar(PREGUNTAS).slice(0, TOTAL_PREGUNTAS);
 
-  document.getElementById("puntaje-actual").textContent = "0";
+    totalPreguntas.textContent = TOTAL_PREGUNTAS;
+    puntajeActual.textContent = puntaje;
 
-  mostrarPantalla("pantalla-juego");
-  mostrarPregunta();
-}
-
-// ===============================
-// CAMBIAR PANTALLAS
-// ===============================
-function mostrarPantalla(idVisible) {
-
-  [
-    "pantalla-inicio",
-    "pantalla-juego",
-    "pantalla-resultado"
-  ].forEach(id => {
-
-    document.getElementById(id).classList.toggle(
-      "oculto",
-      id !== idVisible
-    );
-
-  });
-
-}
-
-// ===============================
-// MOSTRAR PREGUNTA
-// ===============================
-function mostrarPregunta() {
-document.getElementById("feedback").classList.add("oculto");
-  if (estado.indice >= estado.preguntasMezcladas.length) {
-    terminarJuego();
-    return;
-  }
-
-  estado.respondida = false;
-
-  const p = estado.preguntasMezcladas[estado.indice];
-
-  document.getElementById("num-actual").textContent =
-    estado.indice + 1;
-
-  document.getElementById("categoria").textContent =
-    p.categoria;
-
-  document.getElementById("pregunta-texto").textContent =
-    p.pregunta;
-
-  const progreso =
-    ((estado.indice) /
-      estado.preguntasMezcladas.length) * 100;
-
-  document.getElementById("barra-fill").style.width =
-    progreso + "%";
-
-  const contenedor =
-    document.getElementById("opciones");
-
-  contenedor.innerHTML =
-    p.opciones.map((op, i) =>
-
-      `<button class="opcion"
-          onclick="responder(${i})">
-
-          <span class="letra">
-            ${"ABCD"[i]}
-          </span>
-
-          ${op}
-
-      </button>`
-
-    ).join("");
-
-  document.getElementById("btn-siguiente")
-    .classList.add("oculto");
-
-  iniciarTemporizador();
-
-}
-
-// ===============================
-// RESPONDER
-// ===============================
-function responder(indiceElegido) {
-
-  if (estado.respondida) return;
-
-  estado.respondida = true;
-
-  clearInterval(estado.temporizadorId);
-
-  const p = estado.preguntasMezcladas[estado.indice];
-
-  const botones =
-    document.querySelectorAll(".opcion");
-
-  botones.forEach(btn => btn.disabled = true);
-
-  if (indiceElegido === p.correcta) {
-
-    botones[indiceElegido]
-      .classList.add("correcto");
-
-    estado.puntaje += 100;
-
-    mostrarFeedback(true, p.explicacion);
-
-  } else {
-
-    if (indiceElegido >= 0) {
-
-      botones[indiceElegido]
-        .classList.add("incorrecto");
-
-    }
-
-    botones[p.correcta]
-      .classList.add("correcto");
-
-    mostrarFeedback(false, p.explicacion);
-
-  }
-
-  document.getElementById("puntaje-actual")
-    .textContent = estado.puntaje;
-
-  document.getElementById("btn-siguiente")
-    .classList.remove("oculto");
-
-}
-
-// ===============================
-// SIGUIENTE PREGUNTA
-// ===============================
-function siguientePregunta() {
-
-    estado.indice++;
-
-    if (estado.indice >= estado.preguntasMezcladas.length) {
-        terminarJuego();
-        return;
-    }
+    pantallaInicio.classList.add("oculto");
+    pantallaResultado.classList.add("oculto");
+    pantallaJuego.classList.remove("oculto");
 
     mostrarPregunta();
 }
 
-// ===============================
+
+// ==========================================
+// MOSTRAR PREGUNTA
+// ==========================================
+
+function mostrarPregunta() {
+
+    respondida = false;
+
+    clearInterval(temporizador);
+
+    const pregunta = preguntasMezcladas[preguntaActual];
+
+    numActual.textContent = preguntaActual + 1;
+
+    categoria.textContent = pregunta.categoria;
+
+    preguntaTexto.textContent = pregunta.pregunta;
+
+    puntajeActual.textContent = puntaje;
+
+    feedback.textContent = "";
+    feedback.classList.add("oculto");
+
+    btnSiguiente.classList.add("oculto");
+
+    opciones.innerHTML = "";
+
+    // Actualizar barra de progreso
+    const progreso =
+        ((preguntaActual + 1) / TOTAL_PREGUNTAS) * 100;
+
+    barraFill.style.width = progreso + "%";
+
+
+    // Crear opciones
+    pregunta.opciones.forEach((opcion, indice) => {
+
+        const boton = document.createElement("button");
+
+        boton.className = "opcion";
+
+        boton.textContent = opcion;
+
+        boton.onclick = () => seleccionarRespuesta(indice);
+
+        opciones.appendChild(boton);
+    });
+
+
+    // Iniciar temporizador
+    iniciarTemporizador();
+}
+
+
+// ==========================================
 // TEMPORIZADOR
-// ===============================
+// ==========================================
+
 function iniciarTemporizador() {
 
-  let tiempo = TIEMPO_LIMITE;
+    tiempo = 15;
 
-  const el = document.getElementById("tiempo");
+    tiempoDisplay.textContent = tiempo;
 
-  el.style.color = "";
+    temporizador = setInterval(() => {
 
-  el.textContent = tiempo;
+        tiempo--;
 
-  clearInterval(estado.temporizadorId);
+        tiempoDisplay.textContent = tiempo;
 
-  estado.temporizadorId = setInterval(() => {
+        if (tiempo <= 0) {
 
-    tiempo--;
+            clearInterval(temporizador);
 
-    el.textContent = tiempo;
+            tiempoAgotado();
+        }
 
-    if (tiempo <= 10)
-      el.style.color = "#facc15";
+    }, 1000);
+}
 
-    if (tiempo <= 5)
-      el.style.color = "#ef4444";
 
-    if (tiempo <= 0) {
+// ==========================================
+// TIEMPO AGOTADO
+// ==========================================
 
-      clearInterval(estado.temporizadorId);
+function tiempoAgotado() {
 
-      responder(-1);
+    if (respondida) return;
+
+    respondida = true;
+
+    const pregunta = preguntasMezcladas[preguntaActual];
+
+    const botones = document.querySelectorAll(".opcion");
+
+    botones.forEach((boton, indice) => {
+
+        boton.disabled = true;
+
+        if (indice === pregunta.correcta) {
+            boton.classList.add("correcta");
+        }
+
+    });
+
+    feedback.textContent =
+        "⏰ ¡Tiempo agotado! La respuesta correcta era: " +
+        pregunta.opciones[pregunta.correcta];
+
+    feedback.classList.remove("oculto");
+
+    mostrarBotonSiguiente();
+}
+
+
+// ==========================================
+// SELECCIONAR RESPUESTA
+// ==========================================
+
+function seleccionarRespuesta(indice) {
+
+    if (respondida) return;
+
+    respondida = true;
+
+    clearInterval(temporizador);
+
+    const pregunta = preguntasMezcladas[preguntaActual];
+
+    const botones = document.querySelectorAll(".opcion");
+
+    botones.forEach(boton => {
+        boton.disabled = true;
+    });
+
+
+    // RESPUESTA CORRECTA
+    if (indice === pregunta.correcta) {
+
+        puntaje++;
+
+        puntajeActual.textContent = puntaje;
+
+        botones[indice].classList.add("correcta");
+
+        feedback.textContent = "✅ ¡Respuesta correcta!";
+
+        feedback.classList.remove("oculto");
 
     }
 
-  }, 1000);
+    // RESPUESTA INCORRECTA
+    else {
 
+        botones[indice].classList.add("incorrecta");
+
+        botones[pregunta.correcta].classList.add("correcta");
+
+        feedback.textContent =
+            "❌ Incorrecto. La respuesta correcta era: " +
+            pregunta.opciones[pregunta.correcta];
+
+        feedback.classList.remove("oculto");
+    }
+
+
+    mostrarBotonSiguiente();
 }
 
-// ===============================
-// FEEDBACK
-// ===============================
-function mostrarFeedback(correcto, texto) {
 
-    const mensaje = document.getElementById("feedback");
+// ==========================================
+// MOSTRAR BOTÓN SIGUIENTE
+// ==========================================
 
-    mensaje.classList.remove("oculto");
+function mostrarBotonSiguiente() {
 
-    mensaje.innerHTML =
-        (correcto ? "✅ Correcto<br>" : "❌ Incorrecto<br>") +
-        texto;
+    btnSiguiente.classList.remove("oculto");
 
+    // Si es la última pregunta
+    if (preguntaActual === TOTAL_PREGUNTAS - 1) {
 
+        btnSiguiente.textContent = "Ver Resultado 🏆";
+
+    } else {
+
+        btnSiguiente.textContent = "Siguiente →";
+    }
 }
 
-// ===============================
+
+// ==========================================
+// SIGUIENTE PREGUNTA
+// ==========================================
+
+function siguientePregunta() {
+
+    if (!respondida) return;
+
+    // Si ya terminó las 10 preguntas
+    if (preguntaActual >= TOTAL_PREGUNTAS - 1) {
+
+        finalizarJuego();
+
+        return;
+    }
+
+    preguntaActual++;
+
+    mostrarPregunta();
+}
+
+
+// ==========================================
 // FINALIZAR JUEGO
-// ===============================
-function terminarJuego() {
+// ==========================================
 
-    clearInterval(estado.temporizadorId);
+function finalizarJuego() {
 
-    guardarRecord(estado.puntaje);
+    clearInterval(temporizador);
 
-    document.getElementById("puntaje-final").textContent = estado.puntaje;
+    pantallaJuego.classList.add("oculto");
 
-    document.getElementById("record").textContent =
-        localStorage.getItem("trivia-record") || 0;
+    pantallaResultado.classList.remove("oculto");
 
-    mostrarPantalla("pantalla-resultado");
+    // Mostrar puntaje
+    puntajeFinal.textContent = puntaje;
+
+
+    // Obtener récord anterior
+    let record = obtenerRecord();
+
+
+    // Si superó el récord
+    if (puntaje > record) {
+
+        record = puntaje;
+
+        localStorage.setItem(
+            "recordTrivia",
+            record
+        );
+
+        mensajeResultado.textContent =
+            "🎉 ¡Nuevo récord! Has conseguido tu mejor puntuación.";
+
+        resultadoEmoji.textContent = "🏆";
+
+    }
+
+    // Puntaje perfecto
+    else if (puntaje === TOTAL_PREGUNTAS) {
+
+        mensajeResultado.textContent =
+            "🔥 ¡Puntuación perfecta! ¡Excelente trabajo!";
+
+        resultadoEmoji.textContent = "👑";
+
+    }
+
+    // Buen resultado
+    else if (puntaje >= 7) {
+
+        mensajeResultado.textContent =
+            "👏 ¡Muy bien! Tienes buenos conocimientos de sistemas.";
+
+        resultadoEmoji.textContent = "🥇";
+
+    }
+
+    // Resultado medio
+    else if (puntaje >= 5) {
+
+        mensajeResultado.textContent =
+            "👍 ¡Buen trabajo! Sigue practicando para mejorar.";
+
+        resultadoEmoji.textContent = "🥈";
+
+    }
+
+    // Resultado bajo
+    else {
+
+        mensajeResultado.textContent =
+            "💪 Puedes mejorar. ¡Inténtalo nuevamente!";
+
+        resultadoEmoji.textContent = "📚";
+    }
+
+
+    // Mostrar récord actualizado
+    recordDisplayFinal.textContent = record;
+    recordDisplay.textContent = record;
 }
 
-// ===============================
-// GUARDAR RÉCORD
-// ===============================
-function guardarRecord(puntaje) {
 
-  const record = localStorage.getItem("trivia-record") || 0;
-
-document.getElementById("record-display").textContent = record;
-document.getElementById("record-display-final").textContent = record;
-
-  if (puntaje > record) {
-
-    localStorage.setItem(
-      "trivia-record",
-      puntaje
-    );
-
-  }
-
-}
-
-// ===============================
+// ==========================================
 // REINICIAR JUEGO
-// ===============================
+// ==========================================
+
 function reiniciarJuego() {
 
-  iniciarJuego();
+    clearInterval(temporizador);
+
+    pantallaResultado.classList.add("oculto");
+
+    pantallaInicio.classList.remove("oculto");
+
+    actualizarRecord();
+}
+
+
+// ==========================================
+// INICIALIZAR RÉCORD
+// ==========================================
+
+actualizarRecord();
 
 }
